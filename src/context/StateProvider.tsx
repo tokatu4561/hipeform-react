@@ -1,4 +1,4 @@
-import { createContext, FC, useContext, useState } from 'react'
+import { createContext, FC, ReactNode, useContext, useState } from 'react'
 import { Task } from '../types'
 
 interface StateContextType {
@@ -10,7 +10,7 @@ interface StateContextType {
 
 const StateContext = createContext({} as StateContextType)
 
-export const StateProvider: FC = ({ children }) => {
+export const StateProvider: FC<{ children: ReactNode }> = ({ children }) => {
   const [tasks, setTasks] = useState<Task[] | null>(null)
   const [isDark, setIsDark] = useState(false)
 
