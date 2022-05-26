@@ -28,7 +28,7 @@ export const taskSlice = createSlice({
     setEditedTask: (state, action:PayloadAction<IEditTask>) => {
         state.editedTask = action.payload
     },
-    resetEditedTask: (state, action:PayloadAction<IEditTask>) => {
+    resetEditedTask: (state) => {
         state.editedTask = initialState.editedTask
     },
     setEditedTag: (state, action:PayloadAction<ITag>) => {
