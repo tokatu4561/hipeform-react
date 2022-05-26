@@ -1,4 +1,4 @@
-export interface Task {
+export interface ITask {
     id: number
     title: string
     tag: number
@@ -7,13 +7,13 @@ export interface Task {
     updated_at: string
   }
   
-  export interface EditTask {
+  export interface IEditTask {
     id: number
     title: string
     tag: number
   }
 
-  export interface Tag {
+  export interface ITag {
     id: number
     name: string
   }

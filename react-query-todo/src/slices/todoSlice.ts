@@ -1,11 +1,11 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { RootState } from '../app/store';
-import { EditTask, Tag } from '../types';
+import { IEditTask, ITag } from '../types';
 
 
 export interface TaskState {
-  editedTask: EditTask;
-  editedTag: Tag
+  editedTask: IEditTask;
+  editedTag: ITag
 }
 
 const initialState: TaskState = {
@@ -25,13 +25,13 @@ export const taskSlice = createSlice({
   name: 'task',
   initialState,
   reducers: {
-    setEditedTask: (state, action:PayloadAction<EditTask>) => {
+    setEditedTask: (state, action:PayloadAction<IEditTask>) => {
         state.editedTask = action.payload
     },
-    resetEditedTask: (state, action:PayloadAction<EditTask>) => {
+    resetEditedTask: (state, action:PayloadAction<IEditTask>) => {
         state.editedTask = initialState.editedTask
     },
-    setEditedTag: (state, action:PayloadAction<Tag>) => {
+    setEditedTag: (state, action:PayloadAction<ITag>) => {
         state.editedTag = action.payload
     },
     restEditedTag: (state) => {
